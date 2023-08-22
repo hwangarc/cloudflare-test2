@@ -30,7 +30,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const referringURL = ctx.req.headers?.referer || null;
   const pathArr = ctx.query.postpath as string[];
   const path = pathArr.join('/');
-  console.log(path);
   const fbclid = ctx.query.fbclid;
 
   if (referringURL?.includes('facebook.com') || fbclid) {
@@ -97,7 +96,7 @@ interface PostProps {
   path: string;
 }
 
-const Post: React.FC<PostProps> = (props) => {
+const PostPage: React.FC<PostProps> = (props) => {
   const { post, host, path } = props;
 
   const removeTags = (str: string) => {
@@ -118,4 +117,4 @@ const Post: React.FC<PostProps> = (props) => {
   );
 };
 
-export default Post;
+export default PostPage;

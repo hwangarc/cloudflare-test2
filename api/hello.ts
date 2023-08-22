@@ -5,6 +5,13 @@ type Data = {
   name: string
 }
 
+export const config = {
+  api: {
+    // Thêm runtime cấu hình
+    externalResolver: true,
+  },
+}
+
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
